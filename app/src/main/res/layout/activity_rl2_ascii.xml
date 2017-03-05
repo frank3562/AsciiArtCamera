@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_rl2_ascii"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="as.frank3562.rl2ascii.RL2ASCIIActivity">
+
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/cameraButton"
+        android:textAlignment="viewStart"
+        android:text="Capture Real Life"
+        android:onClick="toCamera"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Convert 2 ASCII"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/asciiButton"
+        android:layout_below="@+id/cameraButton"
+        android:layout_alignLeft="@+id/cameraButton"
+        android:layout_alignStart="@+id/cameraButton"
+        android:layout_alignRight="@+id/cameraButton"
+        android:layout_alignEnd="@+id/cameraButton"
+        android:onClick="toAscii" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/ic_menu_camera"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:id="@+id/cameraImageView" />
+
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/asciiProgressBar" />
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/asciiButton">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <ScrollView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/asciiButton"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical" >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/asciiButton"
+                        android:id="@+id/artTextView"
+                        android:typeface="monospace"
+                        android:textSize="8sp"
+                        android:contextClickable="false"
+                        android:isScrollContainer="false"
+                        android:editable="false"
+                        android:layout_centerHorizontal="true"
+                        android:scrollHorizontally="false" />
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+    </HorizontalScrollView>
+
+
+</RelativeLayout>
